@@ -1,0 +1,166 @@
+body{
+background: #081b29;   
+}
+
+.artical-1 {
+   background-color: aliceblue;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px;
+    height: 200px;
+    margin-bottom: 15px;
+}
+.artical-1 p{
+    font-size: 28px;
+}
+.content {
+    height: 550px;
+    background-color: transparent;
+    display: flex;
+    color: white;
+}
+
+.content-right img {
+    border: 2px solid black;
+    border-radius: 50%;
+    height: 275px;
+}
+
+.content-right {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-left {
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+}
+.content-left p{
+    font-size: 25px;
+}
+
+.post-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.filter-item {
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: white;
+}
+
+.active-filter {
+    background: orange;
+    /* color: ; */
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+/* posts */
+.post {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.post-box {
+    background-color: aliceblue;
+    box-shadow: 0 4px 14px hsl(355deg 25% 15% / 10%);
+    padding: 0px;
+    border-radius: 0.5rem;
+}
+
+.post-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.5rem;
+}
+
+.category {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: orange;
+}
+
+.post-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: orange;
+    display: -webkit-box;
+    -webkit-line-clamp: 2 ;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-date {
+    display: flex;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-top: 4px;
+}
+.post-desciption{
+    font-size: 0.9rem;
+     line-height: 1.5rem;
+     display: -webkit-box;
+     -webkit-line-clamp: 3;
+     -webkit-box-orient: vertical;
+     overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+footer {
+    color: white;
+    background-color: #2f2d55;
+}
+
+.footer {
+    display: flex;
+    padding: 23px 122px;
+    justify-content: space-evenly;
+}
+
+.footer ul {
+    list-style: none;
+}
+.footer ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.footer>div {
+    width: 223px;
+}
+
+footer .footer-right {
+    text-align: center;
+    color: rgb(190, 210, 224);
+    padding: 12px 0;
+
+}
+
+
+

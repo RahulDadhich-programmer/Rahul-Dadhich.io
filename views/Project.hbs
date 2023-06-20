@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="/static/css/project.css">
+    <link rel="shortcut icon" href="/static/images/fav-icon.png">
+    {{!-- poppins --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,200&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    {{>navbar data = details}}
+    <section class="section section-portfolio" id="portfolio-section">
+        <div class="container">
+            <h2 class="common-heading">My Projects</h2>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem ex
+                eos commodi provident tempore possimus, mollitia vero quas.
+            </p>
+        </div>
+
+        <div class="p-btns">
+            <div class="btn p-btn" data-btn-num="1">Web Design</div>
+            <div class="btn p-btn" data-btn-num="2">Full-stack</div>
+            <div class="btn p-btn" data-btn-num="3">Computer Vision</div>
+        </div>
+
+        <div class="container grid grid-three-column portfolio-images">
+            <div class="img-overlay p-btn--1">
+                <img src="/static/images/cv.jpg" alt="my works" />
+                <pre>Design a Bakery Website
+                                      Used:HTML,CSS,JS
+                </pre>
+                <div class="overlay">
+                    <a href="#" class="common-heading">Bakery Website</a>
+                </div>
+            </div>
+
+            <div class="img-overlay p-btn--3">
+                <img src="/static/images/cv.jpg" alt="my works" />
+                <pre>Color and Image detection
+                                      Used:C++
+                </pre>
+                <div class="overlay">
+                    <a href="http://charcounter.thapaonlineclass.com/" class="common-heading">Computer Vision
+                    </a>
+                </div>
+            </div>
+
+            <div class="img-overlay p-btn--1">
+                <img src="/static/images/cv.jpg" alt="portfolio images " />
+                <pre>Design a Portfolio
+                                      Used:HTML,CSS,JS
+                </pre>
+                <div class="overlay">
+                    <a href="" class="common-heading">My Introduction</a>
+                </div>
+            </div>
+            <div class="img-overlay p-btn--1 p-btn--2">
+                <img src="/static/images/cv.jpg" alt="portfolio images " />
+                <pre>Design a Portfolio Website
+                                      Used:HTML,CSS,JS,Node.js
+                                      Mongodb,express.js
+                </pre>
+                <div class="overlay">
+                    <a href="" target="_blank" class="common-heading">Portfolio</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+
+<script>
+
+    const p_btns = document.querySelector(".p-btns");
+    const p_btn = document.querySelectorAll(".p-btn");
+    const p_img_elem = document.querySelectorAll(".img-overlay");
+
+    p_btns.addEventListener("click", (e) => {
+        const p_btn_clicked = e.target;
+        console.log(p_btn_clicked);
+
+        if (!p_btn_clicked.classList.contains("p-btn")) return;
+
+        p_btn.forEach((curElem) => curElem.classList.remove("p-btn-active"));
+
+        p_btn_clicked.classList.add("p-btn-active");
+
+        // to find the number in data attr
+        const btn_num = p_btn_clicked.dataset.btnNum;
+        console.log(btn_num);
+
+        const img_active = document.querySelectorAll(`.p-btn--${btn_num}`);
+
+        p_img_elem.forEach((curElem) => curElem.classList.add("p-image-not-acitve"));
+
+        img_active.forEach((curElem) =>
+            curElem.classList.remove("p-image-not-acitve")
+        );
+    });
+
+    // swiper js code
+
+    new Swiper(".mySwiper", {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+
+    const myJsmedia = (widthSize) => {
+        if (widthSize.matches) {
+            new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                spaceBetween: 30,
+            });
+        } else {
+            new Swiper(".mySwiper", {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            });
+        }
+    };
+
+    const widthSize = window.matchMedia("(max-width: 780px)");
+    // Call listener function at run time
+    myJsmedia(widthSize);
+    // Attach listener function on state changes
+    widthSize.addEventListener("change", myJsmedia);
+</script>
+
+</html>

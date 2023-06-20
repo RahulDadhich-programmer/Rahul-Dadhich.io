@@ -1,0 +1,89 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        /* padding: 20px 10%; */
+        z-index: 100;
+        background: #2f2d55;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 80px;
+        background: transparent;
+        width: 100%;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    nav ul li {
+        list-style: none;
+        margin: 20px 22px;
+    }
+
+    .left {
+        color: white;
+        font-size: 32px;
+    }
+
+    .left span {
+        color: crimson;
+    }
+
+    .right .Btn-1 {
+        color: white;
+        margin: 10px 10px;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: rgba(146, 217, 230, 0.966);
+        cursor: pointer;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    nav ul li a:hover {
+        color: lavender;
+        font-size: 1.1rem;
+    }
+</style>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">
+                Rahul <span>Dadhich</span>
+                {{!-- {{data.brandName}} --}}
+            </div>
+            <div class="right">
+                <ul>
+                    {{#each data.links}}
+                    <li><a href="{{this.url}}">{{this.label}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+</body>
+
+</html>

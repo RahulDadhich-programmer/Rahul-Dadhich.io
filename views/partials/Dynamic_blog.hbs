@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <link rel="stylesheet" href="/static/css/blog.css">
+</head>
+
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+    
+    <h1>My Blogs</h1>
+    <main>
+        <section>
+            <article class="artical-1">
+                <p>{{Bdata.Intro}}</p>
+            </article>
+
+        </section>
+
+        <!-- Main section -->
+        <div class="content max-width-1 m-auto">
+            <div class="content-left">
+                <h1>{{Bdata.heading_first}}</h1>
+                <p>Are you passionate about technology? Do you crave in-depth insights into the latest trends,
+                    innovations, and breakthroughs in the tech field? Look no further! Our blog is your gateway to the
+                    captivating realm of all things tech.
+                    With a team of knowledgeable and experienced writers, we bring you carefully curated content that
+                    covers a wide spectrum of topics. From artificial intelligence and machine learning to
+                    cybersecurity, web development, data analysis, and much more, our blog is a treasure trove of
+                    valuable information that will keep you informed and inspired.
+                </p>
+            </div>
+            <div class="content-right">
+                <img src="/static/images/blog_main.jpg" alt="">
+            </div>
+
+        </div>
+        <hr>
+        <!-- posts start -->
+
+        <div class="post-filter Contain">
+            <span class="filter-item active-filter" data-filter='all'>All</span>
+            <span class="filter-item" data-filter="Programming">Programming</span>
+            <span class="filter-item" data-filter="Design">Design</span>
+            <span class="filter-item" data-filter="Front-End">Front-End</span>
+            <span class="filter-item" data-filter="Back-End">Back-End</span>
+            <span class="filter-item" data-filter="Computer-vision">Computer Vision</span>
+            <span class="filter-item" data-filter="Data-Analyst">Data Analyst</span>
+        </div>
+        {{#each Bdata.blog_posts}}
+        {{!-- <section class="post contain">
+            {{!-- Programming --}}
+            <!-- post-1 -->
+            <div class="post-box Programming">
+                <img src="{{blog_imageUrl}}" alt="" class="post-img">
+                <h2 class="category">Programming</h2>
+                <a href="#" class="post-title">
+                    {{blog_title}}
+                </a>
+                <span class="post-date">{{blog_date}}</span>
+                <p class="post-description">{{blog_intro}}</p>
+
+            </div>
+            {{!-- post-2 --}}
+            <div class="post-box Programming">
+                <img src="{{blog_imageUrl}}" alt="" class="post-img">
+                <h2 class="category">Programming</h2>
+                <a href="#" class="post-title">
+                    {{blog_title}}
+                </a>
+                <span class="post-date">{{blog_date}}</span>
+                <p class="post-description">{{blog_intro}}</p>
+
+            </div>
+            {{!-- Design --}}
+            <div class="post-box Design">
+                <img src="{{blog_imageUrl}}" alt="" class="post-img">
+                <h2 class="category">Design</h2>
+                <a href="#" class="post-title">
+                    {{blog_title}}
+                </a>
+                <span class="post-date">{{blog_date}}</span>
+                <p class="post-description">{{blog_intro}}</p>
+
+            </div>
+            <div class="post-box Design">
+                <img src="{{blog_imageUrl}}" alt="" class="post-img">
+                <h2 class="category">Design</h2>
+                <a href="#" class="post-title">
+                    {{blog_title}}
+                </a>
+                <span class="post-date">{{blog_date}}</span>
+                <p class="post-description">{{blog_intro}}</p>
+
+            </div>
+
+            {{!-- Front-end --}}
+            <!-- post-1-->
+            <div class="post-box Front-End">
+                <img src="{{blog_imageUrl}}" alt="" class="post-img">
+                <h2 class="category">Front-End</h2>
+                <a href="#" class="post-title">
+                    {{blog_title}}
+                </a>
+                <span class="post-date">{{blog_date}}</span>
+                <p class="post-description">{{blog_intro}}</p>
+
+            </div>
+            {{!-- post-2 --}}
+            <div class="post-box Front-End">
+                <img src="{{blog_imageUrl}}" alt="" class="post-img">
+                <h2 class="category">Front-End</h2>
+                <a href="#" class="post-title">
+                    {{blog_title}}
+                </a>
+                <span class="post-date">{{blog_date}}</span>
+                <p class="post-description">{{blog_intro}}</p>
+
+            </div>
+            {{!-- Backend --}}
+            <!-- post-1 -->
+            <div class="post-box Back-End">
+                <img src="{{blog_imageUrl}}" alt="" class="post-img">
+                <h2 class="category">Backend</h2>
+                <a href="#" class="post-title">
+                    {{blog_title}}
+                </a>
+                <span class="post-date">{{blog_date}}</span>
+                <p class="post-description">{{blog_intro}}</p>
+
+            </div>
+            {{!-- post-2 --}}
+            <div class="post-box Back-End">
+                <img src="{{blog_imageUrl}}" alt="" class="post-img">
+                <h2 class="category">Backend</h2>
+                <a href="#" class="post-title">
+                    {{blog_title}}
+                </a>
+                <span class="post-date">{{blog_date}}</span>
+                <p class="post-description">{{blog_intro}}</p>
+
+            </div>
+            {{!-- cv --}}
+            <!-- pos-1 -->
+            <div class="post-box Computer-vision">
+                <img src="{{blog_imageUrl}}" alt="" class="post-img">
+                <h2 class="category">Computer Vison</h2>
+                <a href="#" class="post-title">
+                    {{blog_title}}
+                </a>
+                <span class="post-date">{{blog_date}}</span>
+                <p class="post-description">{{blog_intro}}</p>
+
+            </div>
+            {{!-- post-2 --}}
+            <div class="post-box Computer-vision">
+                <img src="{{blog_imageUrl}}" alt="" class="post-img">
+                <h2 class="category">Computer Vison</h2>
+                <a href="#" class="post-title">
+                    {{blog_title}}
+                </a>
+                <span class="post-date">{{blog_date}}</span>
+                <p class="post-description">{{blog_intro}}</p>
+
+            </div>
+            {{!-- data analyst --}}
+            <!-- post-1 -->
+            <div class="post-box Data-Analyst">
+                <img src="{{blog_imageUrl}}" alt="" class="post-img">
+                <h2 class="category">Data Analyst</h2>
+                <a href="#" class="post-title">
+                    {{blog_title}}
+                </a>
+                <span class="post-date">{{blog_date}}</span>
+                <p class="post-description">{{blog_intro}}</p>
+
+            </div> --}}
+            <!-- post-6 -->
+
+            <!-- post-7 -->
+
+            <!-- post-8 -->
+            {{!-- <div class="post-box Programming">
+                <img src="{{blog_imageUrl}}" alt="" class="post-img">
+                <h2 class="category">Programming</h2>
+                <a href="#" class="post-title">
+                    {{blog_title}}
+                </a>
+                <span class="post-date">{{blog_date}}</span>
+                <p class="post-description">{{blog_intro}}</p>
+
+            </div> --}}
+            <!-- post-9 -->
+            {{!-- <div class="post-box Programming">
+                <img src="{{blog_imageUrl}}" alt="" class="post-img">
+                <h2 class="category">Programming</h2>
+                <a href="#" class="post-title">
+                    {{blog_title}}
+                </a>
+                <span class="post-date">{{blog_date}}</span>
+                <p class="post-description">{{blog_intro}}</p>
+
+            </div> --}}
+            <!-- pos-10 -->
+            {{!-- <div class="post-box Programming">
+                <img src="{{blog_imageUrl}}" alt="" class="post-img">
+                <h2 class="category">Programming</h2>
+                <a href="#" class="post-title">
+                    {{blog_title}}
+                </a>
+                <span class="post-date">{{blog_date}}</span>
+                <p class="post-description">{{blog_intro}}</p>
+
+            </div> --}}
+            <!-- post-11 -->
+            {{!-- <div class="post-box Programming">
+                <img src="{{blog_imageUrl}}" alt="" class="post-img">
+                <h2 class="category">Programming</h2>
+                <a href="#" class="post-title">
+                    {{blog_title}}
+                </a>
+                <span class="post-date">{{blog_date}}</span>
+                <p class="post-description">{{blog_intro}}</p>
+
+            </div> --}}
+            <!-- post-12-->
+            {{!-- <div class="post-box Programming">
+                <img src="{{blog_imageUrl}}" alt="" class="post-img">
+                <h2 class="category">Programming</h2>
+                <a href="#" class="post-title">
+                    {{blog_title}}
+                </a>
+                <span class="post-date">{{blog_date}}</span>
+                <p class="post-description">{{blog_intro}}</p>
+
+            </div> --}}
+            {{!--
+        </section> --}}
+
+        {{/each}}
+
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-first">
+                <h3>Rahul Dadhich</h3>
+            </div>
+            <div class="footer-second">
+                <ul>
+
+                    <li> <a href="/">Home</a></li>
+                    <li> <a href="#">About</a> </li>
+                    <li> <a href="#">Contact</a> </li>
+                    <li> <a href="#">Services</a> </li>
+
+                </ul>
+            </div>
+            <div class="footer-third">
+                <ul>
+
+                    <li> <a href="https://www.linkedin.com/in/rahul-dadhich-a40b67200"> LinkedIn</a> </li>
+                    <li> <a href="https://github.com/RahulDadhich-programmer"> Git Hub</a></li>
+                    <li> <a href="https://instagram.com/rahul_dadhich15?igshid=MjEwN2IyYWYwYw==">Instagram</a> </li>
+                    <li> <a href="#">Facebook</a> </li>
+                </ul>
+            </div>
+            <div class="footer-fourth">
+                <ul>
+
+                    <li> <a href="#">Blog</a> </li>
+                    <li> <a href="#">Projects</a> </li>
+                    <li> <a href="#">SignUp</a> </li>
+                    <li> <a href="#">Login</a> </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footer-right">
+            Copyright &#169; rahuldadhich.com || All rights reserved
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+    <script>
+        // Fliter JS
+        $(document).ready(function () {
+            $('.filter-item').click(function () {
+                const value = $(this).attr('data-filter')
+                if (value == 'all') {
+                    $('.post-box').show('1000')
+                }
+                else {
+                    $('.post-box').not('.' + value).hide('1000')
+                    $('.post-box').filter('.' + value).show('1000')
+
+                }
+            });
+            // Add active to btn
+            $('.filter-item').click(function () {
+                $(this).addclass("active-filter").siblings().removeClass("active-filter");
+            });
+        });
+
+    </script>
+</body>
+
+</html>
